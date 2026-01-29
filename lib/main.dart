@@ -59,7 +59,7 @@ class _HomePageState extends State<HomePage> {
         flag: OverlayFlag.clickThrough,
         alignment: OverlayAlignment.center,
         height: 3000, 
-        width: 1200,
+        width: 3000,
       );
     } else {
       await FlutterOverlayWindow.closeOverlay();
