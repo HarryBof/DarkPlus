@@ -50,9 +50,13 @@ class PlatformDarkPlusController implements DarkPlusController {
       visibility: NotificationVisibility.visibilitySecret,
       overlayTitle: 'DarkPlus active',
       overlayContent: 'Tap Quick Settings tile or open app to adjust',
-      width: WindowSize.matchParent,
+      width: heightPx,
       height: heightPx,
+      startPosition: const OverlayPosition(0, 0),
     );
+    try {
+      await _systemChannel.invokeMethod<void>('ensureFullScreenOverlay');
+    } catch (_) {}
   }
 
   @override

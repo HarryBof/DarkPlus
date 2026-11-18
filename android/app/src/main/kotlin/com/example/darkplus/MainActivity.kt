@@ -75,6 +75,10 @@ class MainActivity : FlutterActivity() {
                     "getMaxOverlayHeightPx" -> {
                         result.success(OverlayBridge.computeMaxOverlayHeightPx(this@MainActivity))
                     }
+                    "ensureFullScreenOverlay" -> {
+                        OverlayBridge.scheduleFullScreenFix(this@MainActivity)
+                        result.success(null)
+                    }
                     "requestNotificationPermission" -> {
                         requestNotificationPermissionIfNeeded()
                         result.success(null)
